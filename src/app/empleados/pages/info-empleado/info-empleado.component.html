@@ -1,0 +1,30 @@
+<h1>Información del empleado</h1>
+
+<table class="table table-dark table-sm table-hover">
+    <tbody>
+      <tr>
+        <th scope="row">id</th>
+        <td>{{ empSeleccionado.id }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Nombre</th>
+        <td>{{ empSeleccionado.employee_name }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Edad</th>
+        <td>{{ empSeleccionado.employee_age }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Salario</th>
+        <td>{{ empSeleccionado.employee_salary | currency:'CAD':'symbol-narrow':'1.4-4' }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Imagen de perfil</th>
+        <td> <img [src]="empSeleccionado.profile_image" alt="No se ha encontrado imagen"> </td>
+      </tr>
+    </tbody>
+
+    
+  </table>
+
+  <a class="btn btn-secondary" [routerLink]="['/empleados']">Volver atrás</a>

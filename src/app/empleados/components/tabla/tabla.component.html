@@ -1,0 +1,22 @@
+<h1>Tabla de empleados</h1>
+
+<table class="table table-dark table-sm table-hover">
+    <thead>
+        <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (emp of listaEmpleados; track emp.id) {
+            <tr>
+                <th>{{ emp.id }}</th>
+                <td>{{ emp.employee_name }}</td>
+                <td><a [routerLink]="['/empleados/infoEmpleado',emp.id]" class="btn btn-primary">Ver info</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

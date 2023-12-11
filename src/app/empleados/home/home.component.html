@@ -1,0 +1,30 @@
+
+<div class="row">
+    <main class="col-9">
+        @if (emps != undefined) {
+    
+            <app-tabla [empleados]="emps"></app-tabla>
+        
+        } @else {
+        
+            <div>
+                <div class="alert alert-danger" role="alert">
+                    <p>Se ha producido un error al obtener los datos. Vuelve a intentarlo más tarde.</p>
+                </div>
+            </div>
+            
+        }
+    </main>
+    
+    <aside class="col-3">
+        <ul>
+            <a class="btn btn-primary" [routerLink]="['/empleados/altaEmpleado']">Ir a dar de alta empleado</a>
+        </ul>
+    </aside>
+
+    
+</div>
+
+
+
+

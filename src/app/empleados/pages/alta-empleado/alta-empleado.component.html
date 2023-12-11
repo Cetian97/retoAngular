@@ -1,0 +1,50 @@
+<h1>Dar de alta a un empleado</h1>
+
+<form (ngSubmit)="altaUsuario()" [formGroup]="formulario" class="col-6 m-auto border border-dark-subtle rounded p-2">
+
+        <div class="mb-3">
+            <label for="nomEmp" class="form-label">Nombre</label>
+            <input formControlName="nomEmp" type="email" class="form-control" id="nomEmp" aria-describedby="emailHelp">
+            @if (validacionCampo('nomEmp')) {
+                <span class="form-text text-danger">Nombre requerido</span>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="edadEmp" class="form-label">Edad</label>
+            <input formControlName="edadEmp" type="number" class="form-control" id="edadEmp">
+            @if (validacionCampo('edadEmp')) {
+                <span class="form-text text-danger">La edad tiene que estar comprendida entre 18 y 65</span>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="salEmp" class="form-label">Salario</label>
+            <input formControlName="salEmp" type="number" class="form-control" id="salEmp">
+            @if (validacionCampo('salEmp')) {
+                <span class="form-text text-danger">El salario tiene que ser mayor que 15120</span>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="imgEmp" class="form-label">Foto</label>
+            <input formControlName="imgEmp" type="file" class="form-control" id="imgEmp">
+        </div>
+        
+        
+        <button type="submit" class="btn btn-primary d-block m-auto">Dar de alta empleado</button>
+
+</form>
+
+<a class="btn btn-secondary" [routerLink]="['/empleados']">Volver atrás</a>
+
+<!-- <p>Validaciones</p>
+
+<p>Formulario válido:</p>
+
+<p>{{ formulario.valid }}</p>
+
+<p>Pristine:</p>
+
+<p>{{ formulario.pristine }}</p>
+
+<p>Touched:</p>
+
+<p>{{ formulario.touched }}</p> -->
